@@ -63,7 +63,7 @@ class Source(Base):
         offset = self.get_pos(ctx['lnum'],ctx['col'],src)
 
         # invoke gocode
-        proc = subprocess.Popen(args=['gocode','-f','json','autocomplete', filepath,'%s' % offset], 
+        proc = subprocess.Popen(args=['gocode', '-source', '-f','json','autocomplete', filepath,'%s' % offset], 
                                 stdin=subprocess.PIPE, 
                                 stdout=subprocess.PIPE, 
                                 stderr=subprocess.DEVNULL)
